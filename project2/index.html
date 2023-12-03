@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .confirmation {
+            text-align: center;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+<form id="registrationForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter a password" required>
+
+    <label for="state">State:</label>
+    <select id="state" type="state">
+        <option id="ka">Karnataka</option>
+        <option id="tn">Tamil Nadu</option>
+        <option id="mh">Maharashtra</option>
+        <option id="ra">Rajasthan</option>
+        <option id="gj">Gujarath</option>
+        <option id="kl">Kerala</option>
+        <option id="an">Andrapradesh</option>
+        <option id="Other">Other</option>
+    </select><br><br>
+
+    <label for="password">Address:</label>
+    <textarea type="address" id="address" placeholder="Enter your address..." required></textarea>
+
+    <input type="submit" value="Submit">
+</form>
+
+<div id="confirmation" class="confirmation" style="display:none;">
+    Registration successful! Thank you for signing up.
+</div>
+
+<script>
+    function validateForm() {
+
+        document.getElementById("registrationForm").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+        return false; 
+    }
+</script>
+
+</body>
+</html>
